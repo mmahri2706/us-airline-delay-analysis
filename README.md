@@ -18,6 +18,36 @@ Exploratory data analysis of airline arrival delays across **20 selected major U
 - Applies **K-means clustering** to standardized, airport-level delay-cause rates, selecting the cluster count using silhouette scores and visualizing clusters with PCA.
 - Uses the **interquartile range (IQR)** method to identify unusually high or low airport-month delay rates.
 
+
+## Key Visualizations & Findings
+
+### 1. Correlation Analysis
+
+![Correlation Heatmap](images/correlation_heatmap.png)
+
+**Figure 1. Correlation heatmap of airline delay rates and reported delay categories.**
+
+Late-aircraft delay rates (r = 0.64), National Airspace System (NAS) delay rates (r = 0.63), and carrier delay rates (r = 0.59) showed the strongest positive correlations with overall delay rates. Because these categories contribute to the overall delay measure, the relationships are partly structural and do not demonstrate independent causal effects.
+
+### 2. K-means Clustering of 20 U.S. Airports
+
+![K-means Clustering](images/kmeans_clustering.png)
+
+**Figure 2. PCA visualization of four airport clusters identified using K-means.**
+
+K-means clustering was used to group airports by similarities in their delay profiles. Four clusters were selected using silhouette-score comparisons. The silhouette score of approximately 0.257 suggests that the clusters are not strongly separated, so these groups are best interpreted as exploratory patterns rather than definitive airport categories.
+
+### 3. Outlier Detection Using the IQR Method
+
+![Outlier Detection](images/outlier_detection.png)
+
+**Figure 3. Distribution of monthly airport delay rates and observations flagged as outliers.**
+
+The interquartile range (IQR) method was used to identify unusually high or low monthly airport delay rates. The analysis identified 14 unusual airport-month observations, including eight associated with San Francisco International Airport (SFO). These observations highlight periods that may warrant closer investigation; an outlier does not automatically indicate an error.
+
+**Overall takeaway:** Airline delay patterns vary across airports and months. Correlation, clustering, and outlier detection provide complementary exploratory perspectives, but the findings do not establish causation or generalize automatically beyond the 20 selected airports.
+  
+
 ## Methods and selected notebook findings
 
 | Method | Purpose | Finding described in the notebook |
